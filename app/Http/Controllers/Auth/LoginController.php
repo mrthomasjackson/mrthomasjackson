@@ -1,8 +1,8 @@
 <?php
 
-namespace mrthomasjackson\Http\Controllers\Auth;
+namespace App\Http\Controllers\Auth;
 
-use mrthomasjackson\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -19,6 +19,16 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
+
+    /**
+     * Show the application's login form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showLoginForm()
+    {
+        return view('adminlte::auth.login');
+    }
 
     /**
      * Where to redirect users after login.
